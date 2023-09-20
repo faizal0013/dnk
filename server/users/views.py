@@ -56,13 +56,13 @@ class LoginApiView(APIView):
 
             user = authenticate(username=email, password=password)
 
-            token, _ = Token.objects.get_or_create(user=user)
-
             if user is None:
                 raise AuthenticationFailed({
                     "details": "invalid credentials",
                     "code": "invalid-credentials",
                 })
+
+            token, _ = Token.objects.get_or_create(user=user)
 
             if user_role == 'super admin':
                 if not user.is_superuser and not self.check_groups(user_role, user):
