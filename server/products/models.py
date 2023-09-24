@@ -1,6 +1,7 @@
 from django.db import models
 
 from users.models import User
+from categorys.models import Category
 
 
 class Product(models.Model):
@@ -13,6 +14,11 @@ class Product(models.Model):
     )
     user_id = models.ForeignKey(
         User, blank=False, null=False, on_delete=models.CASCADE,
+        default=None
+    )
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.PROTECT,
         default=None
     )
 

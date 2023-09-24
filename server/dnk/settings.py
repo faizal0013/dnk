@@ -34,8 +34,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
-    'users',
-    'products',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,6 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+PROJECT_APP = [
+    'users',
+    'products',
+    'categorys',
+]
+
+INSTALLED_APPS += PROJECT_APP
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
