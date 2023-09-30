@@ -1,10 +1,12 @@
 from rest_framework import serializers
 
+from product_inventorys.serializers import ProductInventorySerializer
 from .models import Product
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    user_id = serializers.PrimaryKeyRelatedField(read_only=True)
+    user = serializers.PrimaryKeyRelatedField(read_only=True)
+    # product_inventorys = ProductInventorySerializer(many=True)
 
     class Meta:
         model = Product

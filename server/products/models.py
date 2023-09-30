@@ -12,7 +12,7 @@ class Product(models.Model):
     sale_price = models.DecimalField(
         max_digits=19, decimal_places=2, null=True, blank=True
     )
-    user_id = models.ForeignKey(
+    user = models.ForeignKey(
         User, blank=False, null=False, on_delete=models.CASCADE,
         default=None
     )

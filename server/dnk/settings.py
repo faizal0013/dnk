@@ -44,8 +44,9 @@ INSTALLED_APPS = [
 
 PROJECT_APP = [
     'users',
-    'products',
     'categorys',
+    'products',
+    'product_inventorys',
 ]
 
 INSTALLED_APPS += PROJECT_APP
